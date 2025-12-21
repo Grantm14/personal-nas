@@ -2,7 +2,7 @@
 ---
 
 ## 📄 `docs/hardware.md`
-```markdown
+```mermaid
 # Hardware Overview
 
 ## Base System
