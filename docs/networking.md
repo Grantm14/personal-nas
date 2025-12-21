@@ -2,7 +2,7 @@
 ---
 
 ## 📄 `docs/networking.md`
-```markdown
+```mermaid
 # Networking & Access
 
 ## Network Model
