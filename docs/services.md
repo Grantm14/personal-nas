@@ -2,7 +2,7 @@
 ---
 
 ## 📄 `docs/services.md`
-```markdown
+```mermaid
 # Services & Applications
 
 ## Core Services
