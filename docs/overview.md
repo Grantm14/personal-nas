@@ -1,36 +1,27 @@
+# Network Architecture Overview
+
+This diagram documents the physical and logical network layout of my home NAS
+environment. The design prioritizes simplicity, correct role separation, and
+clear traffic flow.
+
+## High-Level Network Topology
+
 ```mermaid
 flowchart TD
-    %% Clients
-    PC[Desktop PC]
-    Phone[Phone]
-    Laptop[Laptop]
+    Internet[Internet<br/>Fiber Connection]
 
-    %% Core infrastructure
-    VPN[WireGuard VPN]
-    NAS[Unraid NAS]
-    Docker[Docker Services]
-    Storage[Storage Pools]
+    Calix[Calix ISP Router<br/>Gateway (NAT · DHCP · Firewall)<br/>~1 Gbps Up / Down]
 
-    %% Connections
-    PC --> VPN
-    Phone --> VPN
-    Laptop --> VPN
+    Wireless[Wireless Devices<br/>Phones · IoT · Guests]
 
-    VPN --> NAS
-    NAS --> Docker
-    NAS --> Storage
+    RoomRouter[Room Router<br/>Access Point Mode<br/>• No NAT<br/>• No DHCP<br/>• Local switching only<br/>• 100 Mb/s uplink]
 
-    %% Clickable links
-    click NAS "hardware.md"
-    click Storage "storage.md"
-    click Docker "services.md"
-    click VPN "networking.md"
+    NAS[NAS Server<br/>Ethernet<br/>Unraid OS]
 
-    %% Styles
-    classDef client fill:#2563eb,stroke:#1e40af,color:#ffffff
-    classDef core fill:#111827,stroke:#6b7280,color:#ffffff
+    %% Network flow
+    Internet --> Calix
+    Calix --> RoomRouter
+    RoomRouter --> NAS
 
-    %% Class assignments
-    class PC,Phone,Laptop client
-    class NAS,VPN,Docker,Storage core
-```
+    %% Side branch
+    Calix --> Wireless
