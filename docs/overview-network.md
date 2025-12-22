@@ -32,8 +32,10 @@ flowchart LR
 
         NAS[
         <b>NAS Server</b><br/>
-        Ethernet<br/>
-        Unraid OS
+        Unraid OS<br/>
+        Docker Services
+        Long Term Storage
+        
         ]
 
         PC[
