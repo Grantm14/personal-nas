@@ -1,27 +1,32 @@
-# Network Architecture Overview
-
-This diagram documents the physical and logical network layout of my home NAS
-environment. The design prioritizes simplicity, correct role separation, and
-clear traffic flow.
-
-## High-Level Network Topology
-
 ```mermaid
-flowchart TD
+flowchart LR
+    %% ===== Internet Edge =====
     Internet[Internet<br/>Fiber Connection]
 
-    Calix[Calix ISP Router<br/>Gateway: NAT, DHCP, Firewall<br/>~1 Gbps Up / Down]
+    %% ===== ISP Equipment =====
+    subgraph ISP["ISP Network"]
+        Calix[Calix ISP Router<br/>Gateway: NAT, DHCP, Firewall<br/>~1 Gbps Up / Down]
+        Wireless[Wireless Devices<br/>Phones, IoT, Guests]
+    end
 
-    Wireless[Wireless Devices<br/>Phones, IoT, Guests]
+    %% ===== Personal Network =====
+    subgraph Home["Personal Network"]
+        RoomRouter[Room Router<br/>Access Point Mode<br/>No NAT | No DHCP<br/>Local switching only<br/>100 Mb/s uplink]
+        NAS[NAS Server<br/>Ethernet<br/>Unraid OS]
+    end
 
-    RoomRouter[Room Router<br/>Access Point Mode<br/>No NAT<br/>No DHCP<br/>Local switching only<br/>100 Mb/s uplink]
-
-    NAS[NAS Server<br/>Ethernet<br/>Unraid OS]
-
-    %% Network flow
+    %% ===== Connections =====
     Internet --> Calix
     Calix --> RoomRouter
+    Calix --> Wireless
     RoomRouter --> NAS
 
-    %% Side branch
-    Calix --> Wireless
+    %% ===== Styling =====
+    classDef isp fill:#1f2933,stroke:#9ca3af,color:#ffffff
+    classDef home fill:#111827,stroke:#6b7280,color:#ffffff
+    classDef devices fill:#0f172a,stroke:#94a3b8,color:#ffffff
+
+    class Calix,Wireless isp
+    class RoomRouter,NAS home
+    class Internet devices
+```
