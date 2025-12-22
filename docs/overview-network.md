@@ -49,4 +49,6 @@ flowchart LR
     Calix --> Wireless
     RoomRouter --> NAS
     RoomRouter --> PC
+click NAS "nas-structure.md"
+
 ```
