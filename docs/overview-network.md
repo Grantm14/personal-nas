@@ -32,7 +32,7 @@ flowchart LR
 
         NAS[
         <b>NAS Server</b><br/>
-        Unraid OS<br/>
+        Unraid OS
         Docker Services
         Long Term Storage
         
@@ -51,6 +51,7 @@ flowchart LR
     Calix --> Wireless
     RoomRouter --> NAS
     RoomRouter --> PC
-click NAS "nas-structure.md"
+click NAS "https://github.com/Grantm14/personal-nas/blob/main/docs/nas-structure.md"
+
 
 ```
