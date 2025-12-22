@@ -10,11 +10,11 @@ clear traffic flow.
 flowchart TD
     Internet[Internet<br/>Fiber Connection]
 
-    Calix[Calix ISP Router<br/>Gateway (NAT · DHCP · Firewall)<br/>~1 Gbps Up / Down]
+    Calix[Calix ISP Router<br/>Gateway: NAT, DHCP, Firewall<br/>~1 Gbps Up / Down]
 
-    Wireless[Wireless Devices<br/>Phones · IoT · Guests]
+    Wireless[Wireless Devices<br/>Phones, IoT, Guests]
 
-    RoomRouter[Room Router<br/>Access Point Mode<br/>• No NAT<br/>• No DHCP<br/>• Local switching only<br/>• 100 Mb/s uplink]
+    RoomRouter[Room Router<br/>Access Point Mode<br/>No NAT<br/>No DHCP<br/>Local switching only<br/>100 Mb/s uplink]
 
     NAS[NAS Server<br/>Ethernet<br/>Unraid OS]
 
