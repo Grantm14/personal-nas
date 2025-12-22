@@ -2,6 +2,8 @@
 
 This diagram shows the internal structure of the NAS server, focusing on how
 compute, applications, and storage are layered on top of the physical hardware.
+- [Purpose and Usage](nas-purpose.md)
+- [Roadmap and Future Plans](nas-roadmap.md)
 
 ## NAS Structure Overview
 
