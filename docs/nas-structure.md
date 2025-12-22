@@ -37,10 +37,9 @@ flowchart TD
     2tb single HDD: For Lightroom Pics
     ]
 
-    NAS --> OS
-    OS --> Docker
+    NAS --> Docker
+    NAS -->Storage
     Docker --> Apps
-    OS --> Storage
     Storage --> Disks
 ```
 
