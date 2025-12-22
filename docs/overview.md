@@ -2,7 +2,7 @@
 flowchart LR
     Internet[<b>Internet</b><br/>Fiber Connection]
 
-    subgraph ISP["ISP Network"]
+    subgraph ISP["Home Network"]
         Calix[
         <b>Calix ISP Router</b><br/>
         Gateway: NAT, DHCP, Firewall<br/>
