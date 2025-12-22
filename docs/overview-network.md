@@ -31,4 +31,22 @@ flowchart LR
         ]
 
         NAS[
-        <b>NAS Server</b><b
+        <b>NAS Server</b><br/>
+        Ethernet<br/>
+        Unraid OS
+        ]
+
+        PC[
+        <b>Windows PC</b><br/>
+        Primary Workstation<br/>
+        Ethernet
+        ]
+    end
+
+    %% Connections
+    Internet --> Calix
+    Calix --> RoomRouter
+    Calix --> Wireless
+    RoomRouter --> NAS
+    RoomRouter --> PC
+```
