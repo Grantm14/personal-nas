@@ -9,15 +9,9 @@ compute, applications, and storage are layered on top of the physical hardware.
 flowchart TD
     NAS[
     <b>NAS Server</b><br/>
-    Dell OptiPlex<br/>
-    Ethernet
+    192.168.1.198
+    Unraid OS
     ]
-
-    OS[
-    <b>Unraid OS</b><br/>
-    Host Operating System
-    ]
-
     Docker[
     <b>Docker Engine</b><br/>
     Container Runtime
@@ -38,8 +32,9 @@ flowchart TD
 
     Disks[
     <b>Physical Disks</b><br/>
-    NVMe SSD<br/>
-    HDDs
+    NVMe SSD: used for cache<br/>
+    Mirrored 1tb HDDs: used for main data<br/>
+    2tb single HDD: For Lightroom Pics
     ]
 
     NAS --> OS
