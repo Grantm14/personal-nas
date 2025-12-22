@@ -2,6 +2,8 @@
 
 This roadmap outlines planned improvements and experiments for the NAS.
 It reflects both practical needs and learning goals.
+> For current system usage and design goals, see [NAS Purpose](nas-purpose.md).
+
 
 ## Short-Term Goals
 
