@@ -24,6 +24,7 @@ It reflects both practical needs and learning goals.
 - Introduce a second node for workload separation
 - Explore service orchestration concepts
 - Host additional personal projects on the same infrastructure
+- Run local LLM model with simulated persistent memory
 
 ## Guiding Principle
 
